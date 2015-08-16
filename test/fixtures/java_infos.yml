@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  osName_id: 
+  javaName_id: 
+  javaVersion_id: 
+  cpuArch_id: 
+  supported: false
+
+two:
+  osName_id: 
+  javaName_id: 
+  javaVersion_id: 
+  cpuArch_id: 
+  supported: false

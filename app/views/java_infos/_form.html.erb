@@ -1,0 +1,32 @@
+<%= form_for @java_info do |f| %>
+    <% if @java_info.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@java_info.errors.count, "error") %> prohibited this java_info from being saved:</h2>
+
+          <ul>
+          <% @java_info.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+        <%= f.label :osName_id %>
+        <%= f.collection_select :osName_id, OsName.all, :id, :name %>
+    </div>
+    <div class="field">
+        <%= f.label :cpuArch_id %>
+        <%= f.collection_select :cpuArch_id, CpuArch.all, :id, :name %>
+    </div>
+    <div class="field">
+        <%= f.label :javaName_id %>
+        <%= f.collection_select :javaName_id, JavaName.all, :id, :name %>
+    </div>
+    <div class="field">
+        <%= f.label :javaVersion_id %>
+        <%= f.collection_select :javaVersion_id, JavaVersion.all, :id, :name %>
+    </div>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>
