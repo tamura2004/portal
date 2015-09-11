@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816091923) do
+ActiveRecord::Schema.define(version: 20150911002214) do
 
   create_table "cpu_arches", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20150816091923) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.string   "projectName"
+    t.string   "userName"
+    t.date     "startDate"
+    t.date     "endDate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "system_infos", force: :cascade do |t|
