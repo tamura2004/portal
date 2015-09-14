@@ -1,10 +1,42 @@
+p#notice
+  = notice
+h1 予約状況
+
+= link_to "前週", {}, {class: "btn btn-primary btn-xs", href: "/reservations/index/#{@baseDate.prev_week}"}
+= link_to "翌週", {}, {class: "btn btn-primary btn-xs", href: "/reservations/index/#{@baseDate.next_week}"}
+- h1,l1,w1 = 0,0,4
+- h2,l2,w2 = 1,2,3
+
+.mybox
+  table
+    thead
+      tr
+        - @headers.each do |header|
+          th = header
+      - 2.times do
+        tr
+          - @dates.each do |date|
+            td[data-date="#{date}"]
+
+  .bar[style="top:#{h1*50+35}px;left:#{l1*80+5}px;width:#{w1*80-10}px;"] すごい案件
+  .bar[style="top:#{h2*50+35}px;left:#{l2*80+5}px;width:#{w2*80-10}px;"] やばい案件
+
+coffee:
+  $ ->
+    $("#bar1").click -> window.location = "/reservations/1"
+    $("#bar2").click -> window.location = "/reservations/2/edit"
+    $("td").click ->
+      url = "/reservations/new/" + $(this).attr("data-date")
+      console.log url
+      window.location = url
+
 scss:
   $base: #abd;
 
   .mybox {
     position: relative;
   }
-  
+
   table {
     width: 560px;
   }
@@ -19,7 +51,7 @@ scss:
 
   td {
     border: solid 1px dimGray;
-    width: 100px;
+    width: 80px;
     height: 50px;
   }
 
@@ -27,61 +59,13 @@ scss:
     background-color: orange;
   }
 
-  #bar1 {
+  .bar {
     border: solid 1px dimGray;
     position: absolute;
-    top: 35px;
-    left: 5px;
-    width: 310px;
     height: 40px;
     background-color: lighten($base,10%);
 
   }
-  #bar1:hover{
+  .bar:hover{
     background-color: orange;
   }
-
-  #bar2 {
-    border: solid 1px dimGray;
-    position: absolute;
-    top: 85px;
-    left: 165px;
-    width: 70px;
-    height: 40px;
-    background-color: lighten($base,10%);
-
-  }
-  #bar2:hover{
-    background-color: orange;
-  }
-
-coffee:
-  $ ->
-    $("#bar1").click -> window.location = "/reservations/1"
-    $("#bar2").click -> window.location = "/reservations/2/edit"
-    $("td").click ->
-      url = "/reservations/new/" + $(this).attr("data-date")
-      console.log url
-      window.location = url
-
-
-p#notice
-  = notice
-h1 予約状況
-
-= link_to "前週", {}, {class: "btn btn-primary btn-xs", target: "/reservations/index/#{@previous_week}"}
-= link_to "翌週", {}, {class: "btn btn-primary btn-xs", target: "/reservations/index/#{@next_week}"}
-
-.mybox
-  table
-    thead
-      tr
-        - @headers.each do |header|
-          th = header
-      - 2.times do
-        tr
-          - @dates.each do |date|
-            td[data-date="#{date}"]
-
-    #bar1 住宅ローン業務支援システム
-    #bar2 融資マネジメント

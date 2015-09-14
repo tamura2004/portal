@@ -7,19 +7,15 @@ class ReservationsController < ApplicationController
 
     # 基準日指定ない場合、当日を基準とする
     param = params[:baseDate]
-    if param.nil?
-      baseDate = Date.today
-    else
-      baseDate = Date.parse(param)
-    end
+    @baseDate = param ? Date.parse(param) : Date.today
 
     # 基準日から７日分を作成
-    @headers = []
-    @dates = []
-    7.times do
-      @headers << I18n.l(baseDate, format: :short_date)
-      @dates << baseDate.strftime("%Y-%m-%d")
-      baseDate += 1.day
+    @headers = Array.new(7) do |index|
+      I18n.l(@baseDate + index.days, format: :short_date)
+    end
+
+    @dates = Array.new(7) do |index|
+      (@baseDate + index.days).strftime("%Y-%m-%d")
     end
     @reservations = Reservation.all
   end
