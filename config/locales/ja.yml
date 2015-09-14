@@ -1,0 +1,5 @@
+ja:
+  date:
+    formats:
+      full_date: "%Y年%m月%d日（%a）"
+      short_date: "%m/%d（%a）"

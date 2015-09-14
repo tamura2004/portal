@@ -4,6 +4,23 @@ class ReservationsController < ApplicationController
   # GET /reservations
   # GET /reservations.json
   def index
+
+    # 基準日指定ない場合、当日を基準とする
+    param = params[:baseDate]
+    if param.nil?
+      baseDate = Date.today
+    else
+      baseDate = Date.parse(param)
+    end
+
+    # 基準日から７日分を作成
+    @headers = []
+    @dates = []
+    7.times do
+      @headers << I18n.l(baseDate, format: :short_date)
+      @dates << baseDate.strftime("%Y-%m-%d")
+      baseDate += 1.day
+    end
     @reservations = Reservation.all
   end
 
@@ -12,9 +29,18 @@ class ReservationsController < ApplicationController
   def show
   end
 
-  # GET /reservations/new
+  # GET /reservations/new/:startDate
   def new
     @reservation = Reservation.new
+
+    # 開始日指定がある場合、終了日のデフォルトを７日後に指定
+    startDateParam = params[:startDate]
+    if !startDateParam.nil?
+      startDate = Date.parse(startDateParam)
+      endDate = startDate + 7.day
+      @reservation.startDate = startDate
+      @reservation.endDate = endDate
+    end
   end
 
   # GET /reservations/1/edit

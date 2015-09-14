@@ -1,0 +1,21 @@
+p#notice
+  = notice
+p
+  strong
+    | Projectname:
+  = @reservation.projectName
+p
+  strong
+    | Username:
+  = @reservation.userName
+p
+  strong
+    | Startdate:
+  = @reservation.startDate
+p
+  strong
+    | Enddate:
+  = @reservation.endDate
+= link_to 'Edit', edit_reservation_path(@reservation)
+|  | 
+= link_to 'Back', reservations_path

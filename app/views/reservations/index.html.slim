@@ -1,0 +1,87 @@
+scss:
+  $base: #abd;
+
+  .mybox {
+    position: relative;
+  }
+  
+  table {
+    width: 560px;
+  }
+
+  th {
+    background-color: darken($base,10%);
+    border: solid 1px dimGray;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+  }
+
+  td {
+    border: solid 1px dimGray;
+    width: 100px;
+    height: 50px;
+  }
+
+  td:hover{
+    background-color: orange;
+  }
+
+  #bar1 {
+    border: solid 1px dimGray;
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    width: 310px;
+    height: 40px;
+    background-color: lighten($base,10%);
+
+  }
+  #bar1:hover{
+    background-color: orange;
+  }
+
+  #bar2 {
+    border: solid 1px dimGray;
+    position: absolute;
+    top: 85px;
+    left: 165px;
+    width: 70px;
+    height: 40px;
+    background-color: lighten($base,10%);
+
+  }
+  #bar2:hover{
+    background-color: orange;
+  }
+
+coffee:
+  $ ->
+    $("#bar1").click -> window.location = "/reservations/1"
+    $("#bar2").click -> window.location = "/reservations/2/edit"
+    $("td").click ->
+      url = "/reservations/new/" + $(this).attr("data-date")
+      console.log url
+      window.location = url
+
+
+p#notice
+  = notice
+h1 予約状況
+
+= link_to "前週", {}, {class: "btn btn-primary btn-xs", target: "/reservations/index/#{@previous_week}"}
+= link_to "翌週", {}, {class: "btn btn-primary btn-xs", target: "/reservations/index/#{@next_week}"}
+
+.mybox
+  table
+    thead
+      tr
+        - @headers.each do |header|
+          th = header
+      - 2.times do
+        tr
+          - @dates.each do |date|
+            td[data-date="#{date}"]
+
+    #bar1 住宅ローン業務支援システム
+    #bar2 融資マネジメント
