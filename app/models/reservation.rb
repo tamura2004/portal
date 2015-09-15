@@ -1,4 +1,6 @@
 class Reservation < ActiveRecord::Base
+	attr_accessor :top,:left,:width
+
 	validate :multiplex_be_under_license_number
 
 	def multiplex_be_under_license_number
@@ -8,7 +10,7 @@ class Reservation < ActiveRecord::Base
 				ranges as (
 					select *
 						from reservations
-						where ? <= enddate and startdate <= ?
+						where ? <= enddate and startdate <= ? and id <> ?
 				),
 				points as (
 					select distinct startdate as date from ranges
@@ -23,7 +25,7 @@ class Reservation < ActiveRecord::Base
 			);
 		EOL
 
-		in_use = Reservation.find_by_sql([sql,startDate,endDate]).first.num
+		in_use = Reservation.find_by_sql([sql,startDate,endDate,id]).first.num
 
 		if !in_use.nil? && in_use > 1
 			errors.add(:hoge,"対象期間中は既に#{in_use}件の利用があります。dynaTraceの最大同時利用システム数は2件です。")

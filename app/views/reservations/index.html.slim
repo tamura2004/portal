@@ -1,11 +1,19 @@
 p#notice
   = notice
+
 h1 予約状況
 
-= link_to "前週", {}, {class: "btn btn-primary btn-xs", href: "/reservations/index/#{@baseDate.prev_week}"}
-= link_to "翌週", {}, {class: "btn btn-primary btn-xs", href: "/reservations/index/#{@baseDate.next_week}"}
-- h1,l1,w1 = 0,0,4
-- h2,l2,w2 = 1,2,3
+.btn-group.btn-group-xs[role="group"]
+  a.btn.btn-default[href="/reservations/index/#{@baseDate.prev_week}"]
+    span.glyphicon.glyphicon-backward 前週
+  a.btn.btn-default[href="/reservations/index/#{@baseDate.prev_day}"]
+    span.glyphicon.glyphicon-chevron-left 前日
+  a.btn.btn-default[href="/reservations/index/#{Date.today}"]
+    span.glyphicon.glyphicon-chevron-up 今日
+  a.btn.btn-default[href="/reservations/index/#{@baseDate.next_day}"]
+    span.glyphicon.glyphicon-chevron-right 翌日
+  a.btn.btn-default[href="/reservations/index/#{@baseDate.next_week}"]
+    span.glyphicon.glyphicon-forward 翌週
 
 .mybox
   table
@@ -17,23 +25,28 @@ h1 予約状況
         tr
           - @dates.each do |date|
             td[data-date="#{date}"]
-
-  .bar[style="top:#{h1*50+35}px;left:#{l1*80+5}px;width:#{w1*80-10}px;"] すごい案件
-  .bar[style="top:#{h2*50+35}px;left:#{l2*80+5}px;width:#{w2*80-10}px;"] やばい案件
+  - @reservations.each do |res|
+    .bar[style="top:#{res.top*50+35}px;left:#{res.left*80+5}px;width:#{res.width*80-10}px" data-id="#{res.id}"] = res.projectName
 
 coffee:
   $ ->
-    $("#bar1").click -> window.location = "/reservations/1"
-    $("#bar2").click -> window.location = "/reservations/2/edit"
+    $(".bar").click ->
+      url = "/reservations/" + $(this).attr("data-id") + "/edit"
+      window.location.href = url
     $("td").click ->
       url = "/reservations/new/" + $(this).attr("data-date")
-      console.log url
-      window.location = url
+      window.location.href = url
 
 scss:
   $base: #abd;
 
+  .btn {
+    border: solid 1px dimGray;
+    background-color: lighten($base,12%);
+  }
+
   .mybox {
+    margin-top: 4px;
     position: relative;
   }
 
@@ -63,7 +76,7 @@ scss:
     border: solid 1px dimGray;
     position: absolute;
     height: 40px;
-    background-color: lighten($base,10%);
+    background-color: lighten($base,5%);
 
   }
   .bar:hover{

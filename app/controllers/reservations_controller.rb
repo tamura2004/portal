@@ -17,7 +17,21 @@ class ReservationsController < ApplicationController
     @dates = Array.new(7) do |index|
       (@baseDate + index.days).strftime("%Y-%m-%d")
     end
-    @reservations = Reservation.all
+
+    # 予約データ
+    @reservations = Reservation.where("startDate <= ? and ? <= endDate", @baseDate+6, @baseDate).order("startDate")
+    @reservations.each do |res|
+      # 上段・下段（ライセンス番号）
+      # virtualAttributesを取得するため、whereではなくselectを使用する
+      subSet = @reservations.select{|sub|sub.startDate <= res.startDate && res.startDate <= sub.endDate}
+      res.top = ([0,1] - subSet.map(&:top)).min
+
+      # スケジュールバー左端・幅
+      leftDate = [res.startDate, @baseDate].max
+      rightDate = [res.endDate, @baseDate+6].min
+      res.left = (leftDate - @baseDate).to_i
+      res.width = (rightDate - leftDate).to_i + 1
+    end
   end
 
   # GET /reservations/1
