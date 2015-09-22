@@ -20,6 +20,9 @@ rails g model java_name_master name:string
 rails g model ap_server_master name:string
 rails g model system_requirement_info os_name_master:references java_name_master:references java_version_master:references ap_server_master:references
 
+## コントローラ作成
+rails g scaffold_controller reservation
+
 ## slim
 gem "slim-rails"
 
