@@ -1,5 +1,4 @@
-/*@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
-*/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 /*!
  *   AdminLTE v2.3.0
  *   Author: Almsaeed Studio
@@ -2613,16 +2612,16 @@ a:focus {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #f4f4f4;
 }
 .table > thead > tr > th {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #f4f4f4;
 }
 .table tr td .progress {
   margin-top: 5px;
 }
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #f4f4f4;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2630,7 +2629,7 @@ a:focus {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #f4f4f4;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {

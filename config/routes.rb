@@ -1,15 +1,25 @@
 Rails.application.routes.draw do
+  get 'user_sessions/new'
+  get 'user_sessions/create'
+  get 'user_sessions/destroy'
+
   resources :reservations
   resources :java_infos
 
   get "/reservations/new/:startDate", to: "reservations#new"
   get "/reservations/index/:baseDate", to: "reservations#index"
 
+  root to: "users#index"
+  resources :users
+  resources :user_sessions
+
+  get "login" => "user_sessions#new", as: :login
+  get "logout" => "user_sessions#new", as: :logout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'reservations#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

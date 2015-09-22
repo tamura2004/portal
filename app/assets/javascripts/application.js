@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require admin-lte/bootstrap/js/bootstrap
-//= require admin-lte/plugins/fullcalendar/fullcalendar
 //= require admin-lte/dist/js/app.js
 //= require_tree .

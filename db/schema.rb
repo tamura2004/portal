@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911002214) do
+ActiveRecord::Schema.define(version: 20150921030856) do
 
   create_table "cpu_arches", force: :cascade do |t|
     t.string   "name"
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20150911002214) do
   end
 
   add_index "system_infos", ["javaInfo_id"], name: "index_system_infos_on_javaInfo_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",            null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "web_server_infos", force: :cascade do |t|
     t.string   "name"

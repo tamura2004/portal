@@ -1,0 +1,27 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      ul
+        - @user.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.text_field :email
+    = f.submit "create"
+
+  .form-group
+    = label_tag "メールアドレス"
+    .col-xs-6
+      input.form-control type="email" name="user[email]"
+  .form-group
+    = label_tag "パスワード"
+    .col-xs-6
+      input.form-control type="password" name="user[password]"
+  .form-group
+    label.control-label.col-xs-4.text-right パスワード（確認）
+    .col-xs-6
+      input.form-control type="password" name="user[password_confirmation]"
+  .form-group
+    .col-xs-offset-8.col-xs-2
+      input.form-control.btn.btn-primary type="submit" name="commit" value="登録"
