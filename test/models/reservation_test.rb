@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ReservationTest < ActiveSupport::TestCase
-  #should validate_presence_of :projectName
+  should validate_presence_of :projectName
 
   # one:   +------+
   # two:                +--------+
@@ -16,7 +16,7 @@ class ReservationTest < ActiveSupport::TestCase
   end
 
   test "should require project name" do
-    assert_not @no_name.save!
+    assert_not @no_name.save
   end
 
   test "should save overlaped date upto 2" do

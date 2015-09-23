@@ -25,6 +25,7 @@ gem 'seed-fu'
 group :development do
   gem "guard-livereload"
   gem "guard-minitest"
+  gem "spring"
 end
 
 group :development, :test do
@@ -36,6 +37,7 @@ end
 
 group :test do
   gem "shoulda"
+  gem "terminal-notifier-guard"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
