@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150921030856) do
   create_table "reservations", force: :cascade do |t|
     t.string   "projectName"
     t.string   "userName"
-    t.date     "startDate"
-    t.date     "endDate"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

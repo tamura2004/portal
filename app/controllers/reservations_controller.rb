@@ -19,16 +19,16 @@ class ReservationsController < ApplicationController
     end
 
     # 予約データ
-    @reservations = Reservation.where("startDate <= ? and ? <= endDate", @baseDate+6, @baseDate).order("startDate")
+    @reservations = Reservation.where("start_date <= ? and ? <= end_date", @baseDate+6, @baseDate).order("start_date")
     @reservations.each do |res|
       # 上段・下段（ライセンス番号）
       # virtualAttributesを取得するため、whereではなくselectを使用する
-      subSet = @reservations.select{|sub|sub.startDate <= res.startDate && res.startDate <= sub.endDate}
+      subSet = @reservations.select{|sub|sub.start_date <= res.start_date && res.start_date <= sub.end_date}
       res.top = ([0,1] - subSet.map(&:top)).min
 
       # スケジュールバー左端・幅
-      leftDate = [res.startDate, @baseDate].max
-      rightDate = [res.endDate, @baseDate+6].min
+      leftDate = [res.start_date, @baseDate].max
+      rightDate = [res.end_date, @baseDate+6].min
       res.left = (leftDate - @baseDate).to_i
       res.width = (rightDate - leftDate).to_i + 1
     end
@@ -39,17 +39,17 @@ class ReservationsController < ApplicationController
   def show
   end
 
-  # GET /reservations/new/:startDate
+  # GET /reservations/new/:start_date
   def new
     @reservation = Reservation.new
 
     # 開始日指定がある場合、終了日のデフォルトを７日後に指定
-    startDateParam = params[:startDate]
-    if !startDateParam.nil?
-      startDate = Date.parse(startDateParam)
-      endDate = startDate + 7.day
-      @reservation.startDate = startDate
-      @reservation.endDate = endDate
+    start_dateParam = params[:start_date]
+    if !start_dateParam.nil?
+      start_date = Date.parse(start_dateParam)
+      end_date = start_date + 7.day
+      @reservation.start_date = start_date
+      @reservation.end_date = end_date
     end
   end
 
@@ -105,6 +105,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:projectName, :userName, :startDate, :endDate)
+      params.require(:reservation).permit(:projectName, :userName, :start_date, :end_date)
     end
 end

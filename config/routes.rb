@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :java_infos
 
-  get "/reservations/new/:startDate", to: "reservations#new"
+  get "/reservations/new/:start_date", to: "reservations#new"
   get "/reservations/index/:baseDate", to: "reservations#index"
 
   root to: "reservations#index"

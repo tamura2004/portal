@@ -3,8 +3,8 @@ class CreateReservations < ActiveRecord::Migration
     create_table :reservations do |t|
       t.string :projectName
       t.string :userName
-      t.date :startDate
-      t.date :endDate
+      t.date :start_date
+      t.date :end_date
 
       t.timestamps null: false
     end
