@@ -5,6 +5,7 @@ class Reservation < ActiveRecord::Base
 
 	def multiplex_be_under_license_number
 
+
 		sql = <<-'EOL'
 			with
 				ranges as (
@@ -25,9 +26,10 @@ class Reservation < ActiveRecord::Base
 			);
 		EOL
 
-		in_use = Reservation.find_by_sql([sql,startDate,endDate,id]).first.num
+		id_not_null = id || -1
+		in_use = Reservation.find_by_sql([sql,startDate,endDate,id_not_null]).first.num
 
-		if !in_use.nil? && in_use > 1
+		if !in_use.nil? && in_use >= 2
 			errors.add(:hoge,"対象期間中は既に#{in_use}件の利用があります。dynaTraceの最大同時利用システム数は2件です。")
 		end
 	end
