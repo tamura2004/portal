@@ -10,16 +10,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# gem 'bcrypt'
-# gem 'devise'
-
-gem "sorcery"
-
-gem 'seed-fu'
+# view関連
 gem 'slim-rails'
+gem "bootstrap-sass"
 gem 'redcarpet'
 gem 'rails-i18n'
-gem "bower-rails"
+
+# 認証
+gem "sorcery"
+
+# model関連
+gem 'seed-fu'
 
 group :development do
   gem "guard-livereload"

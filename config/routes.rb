@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   get "/reservations/new/:startDate", to: "reservations#new"
   get "/reservations/index/:baseDate", to: "reservations#index"
 
-  root to: "users#index"
+  root to: "reservations#index"
   resources :users
   resources :user_sessions
 
   get "login" => "user_sessions#new", as: :login
-  get "logout" => "user_sessions#new", as: :logout
+  get "logout" => "user_sessions#destroy", as: :logout
 
 end

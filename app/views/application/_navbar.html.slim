@@ -1,0 +1,21 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      // トグルボタン
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        span.sr-only toggle
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      // ホームボタン
+      a.navbar-brand href="/reservations"
+        span.glyphicon.glyphicon-home dynaTraceポータル
+
+    // メニュー
+    .collapse.navbar-collapse#navbar
+      ul.nav.navbar-nav.navbar-right
+        - if current_user
+          li: a href="/user_sessions/destroy" ログアウト
+        - else
+          li: a href="/user_sessions/new" ログイン

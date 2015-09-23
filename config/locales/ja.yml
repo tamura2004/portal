@@ -1,10 +1,10 @@
 ja:
-	activerecord:
-		attributes:
-			email: "メールアドレス"
+  activerecord:
+    attributes:
+      email: "メールアドレス"
   date:
     formats:
       full_date: "%Y年%m月%d日（%a）"
       short_date: "%m/%d（%a）"
-	email: "メールアドレス"
-	password: "パスワード"
+  email: "メールアドレス"
+  password: "パスワード"
