@@ -1,47 +1,48 @@
 require 'test_helper'
 
 class ReservationTest < ActiveSupport::TestCase
-  should validate_presence_of :projectName
+  # fixture
+  # one:   9/01 - 9/10  +------+
+  # two:   9/20 - 9/30                +--------+
+  # three: 9/01 - 9/30  +----------------------+
 
-  # one:   +------+
-  # two:                +--------+
-  # three: +---------------------+
-  # four:          +----+
   setup do
-    @one = Reservation.new(projectName: "one", start_date: "2015-09-01", end_date: "2015-09-10")
-    @two =  Reservation.new(projectName: "two", start_date: "2015-09-20", end_date: "2015-09-30")
-    @three = Reservation.new(projectName: "three", start_date: "2015-09-01", end_date: "2015-09-30")
-    @four = Reservation.new(projectName: "four", start_date: "2015-09-11", end_date: "2015-09-20")
-    @no_name = Reservation.new(start_date: "2015-09-11", end_date: "2015-09-20")
+    @res = Reservation.new
   end
 
   test "should require project name" do
-    assert_not @no_name.save
+    @res.start_date = "2015-09-11"
+    @res.end_date = "2015-09-19"
+
+    assert_not @res.valid?
   end
 
-  test "should save overlaped date upto 2" do
-    assert @one.save
-    assert @two.save
-    assert @three.save
+  test "should save if another one reservation already exists" do
+    @res.start_date = "2015-09-11"
+    @res.end_date = "2015-09-19"
+
+    @res.projectName = "myproject"
+    assert @res.valid?
   end
 
-  test "should not save overlaped date over 3" do
-    @one.save
-    @two.save
-    @three.save
-    assert_not @four.save
+  test "should not save if overlaped date over 2" do
+    @res.start_date = "2015-09-01"
+    @res.end_date = "2015-09-01"
+
+    @res.projectName = "myproject"
+    assert_not @res.save
   end
 
   test "should not overlap self" do
-    @one.save
-    @two.save
-    @three.save
+    @res.start_date = "2015-09-11"
+    @res.end_date = "2015-09-19"
 
-    @three.end_date = "2015-09-10"
-    assert @three.save
+    @res.projectName = "myproject"
+    @res.save
 
-    @two.start_date = "2015-09-01"
-    assert_not @two.save
+    @res.start_date = "2015-09-18"
+    assert @res.save
+
   end
 
 end

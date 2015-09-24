@@ -6,7 +6,6 @@ class Reservation < ActiveRecord::Base
 
 	def multiplex_be_under_license_number
 
-
 		sql = <<-'EOL'
 			with
 				ranges as (
@@ -27,7 +26,7 @@ class Reservation < ActiveRecord::Base
 			);
 		EOL
 
-		id_not_null = id || -1
+		id_not_null = id || -1 # dirty hack NULL回避
 		in_use = Reservation.find_by_sql([sql,start_date,end_date,id_not_null]).first.num
 
 		if !in_use.nil? && in_use >= 2
