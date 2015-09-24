@@ -110,7 +110,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.0)
+    minitest (5.8.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -211,6 +211,9 @@ GEM
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
       oauth2 (>= 0.8.0)
+    spork (1.0.0rc4)
+    spork-minitest (0.0.3)
+      spork
     spring (1.4.0)
     sprockets (3.3.4)
       rack (~> 1.0)
@@ -263,6 +266,8 @@ DEPENDENCIES
   shoulda
   slim-rails
   sorcery
+  spork (= 1.0.0rc4)
+  spork-minitest
   spring
   sqlite3
   terminal-notifier-guard
