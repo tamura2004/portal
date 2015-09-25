@@ -211,9 +211,6 @@ GEM
       bcrypt (~> 3.1)
       oauth (~> 0.4, >= 0.4.4)
       oauth2 (>= 0.8.0)
-    spork (1.0.0rc4)
-    spork-minitest (0.0.3)
-      spork
     spring (1.4.0)
     sprockets (3.3.4)
       rack (~> 1.0)
@@ -266,8 +263,6 @@ DEPENDENCIES
   shoulda
   slim-rails
   sorcery
-  spork (= 1.0.0rc4)
-  spork-minitest
   spring
   sqlite3
   terminal-notifier-guard

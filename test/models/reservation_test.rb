@@ -2,47 +2,52 @@ require 'test_helper'
 
 class ReservationTest < ActiveSupport::TestCase
   # fixture
-  # one:   9/01 - 9/10  +------+
-  # two:   9/20 - 9/30                +--------+
-  # three: 9/01 - 9/30  +----------------------+
+  # one:   9/01 -  9/30  +------+
+  # two:  11/01 - 11/30                +--------+
 
   setup do
-    @res = Reservation.new
   end
 
-  test "should require project name" do
-    @res.start_date = "2015-09-11"
-    @res.end_date = "2015-09-19"
-
-    assert_not @res.valid?
+  test "should require project name to update" do
+    res = reservations(:one)
+    res.projectName = nil
+    assert res.invalid?
   end
 
-  test "should save if another one reservation already exists" do
-    @res.start_date = "2015-09-11"
-    @res.end_date = "2015-09-19"
+  test "should require project name to create" do
+    res = Reservation.new
+    assert res.invalid?
+  end
 
-    @res.projectName = "myproject"
-    assert @res.valid?
+  test "should save if no overlap" do
+    res = Reservation.new(
+      projectName: "myproject",
+      start_date: "2015-08-10",
+      end_date: "2015-08-20"
+    )
+    assert res.valid?
+
+    res = Reservation.new(
+      projectName: "myproject",
+      start_date: "2015-10-01",
+      end_date: "2015-10-31"
+    )
+    assert res.valid?
   end
 
   test "should not save if overlaped date over 2" do
-    @res.start_date = "2015-09-01"
-    @res.end_date = "2015-09-01"
+    @four.start_date = "2015-09-10"
+    @four.end_date = "2015-09-11"
+    @four.projectName = "myproject"
 
-    @res.projectName = "myproject"
-    assert_not @res.save
+    assert @four.invalid?
   end
 
-  test "should not overlap self" do
-    @res.start_date = "2015-09-11"
-    @res.end_date = "2015-09-19"
+  test "should not include self upon to consider the overlap" do
+    res = reservations(:one)
+    res.start_date = "2015-09-10" # overlaping self(old)
 
-    @res.projectName = "myproject"
-    @res.save
-
-    @res.start_date = "2015-09-18"
-    assert @res.save
-
+    assert res.valid?
   end
 
 end

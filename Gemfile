@@ -38,8 +38,6 @@ end
 group :test do
   gem "shoulda"
   gem "terminal-notifier-guard"
-  gem "spork", "1.0.0rc4"
-  gem "spork-minitest"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
