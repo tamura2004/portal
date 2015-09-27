@@ -8,7 +8,7 @@ class ReservationTest < ActiveSupport::TestCase
   setup do
   end
 
-  test "should require project name to update" do
+  test "should require project name to 漢字" do
     res = reservations(:one)
     res.projectName = nil
     assert res.invalid?
@@ -22,13 +22,6 @@ class ReservationTest < ActiveSupport::TestCase
   test "should save if no overlap" do
     res = Reservation.new(
       projectName: "myproject",
-      start_date: "2015-08-10",
-      end_date: "2015-08-20"
-    )
-    assert res.valid?
-
-    res = Reservation.new(
-      projectName: "myproject",
       start_date: "2015-10-01",
       end_date: "2015-10-31"
     )
@@ -36,11 +29,12 @@ class ReservationTest < ActiveSupport::TestCase
   end
 
   test "should not save if overlaped date over 2" do
-    @four.start_date = "2015-09-10"
-    @four.end_date = "2015-09-11"
-    @four.projectName = "myproject"
-
-    assert @four.invalid?
+    res = Reservation.new(
+      projectName: "myproject",
+      start_date: "2015-09-01",
+      end_date: "2015-11-30"
+    )
+    assert res.invalid?
   end
 
   test "should not include self upon to consider the overlap" do
