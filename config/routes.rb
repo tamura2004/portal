@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :system_info_views
   get 'user_sessions/new'
   get 'user_sessions/create'
   get 'user_sessions/destroy'

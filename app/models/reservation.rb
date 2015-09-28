@@ -1,4 +1,7 @@
 class Reservation < ActiveRecord::Base
+	belongs_to :project_info
+	belongs_to :user
+
 	attr_accessor :top,:left,:width
 
 	validate :multiplex_be_under_license_number

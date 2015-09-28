@@ -26,6 +26,7 @@ group :development do
   gem "guard-livereload"
   gem "guard-minitest"
   gem "spring"
+  gem "rails-erd"
 end
 
 group :development, :test do

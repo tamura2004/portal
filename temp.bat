@@ -1,0 +1,1 @@
+rails g model SystemRequirementInfo os_info:references java_info:references ap_server_info:references

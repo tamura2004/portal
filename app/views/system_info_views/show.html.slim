@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @system_info_view.name
+p
+  strong Number:
+  = @system_info_view.number
+p
+  strong Os info:
+  = @system_info_view.os_info
+p
+  strong Java info:
+  = @system_info_view.java_info
+p
+  strong Ap server info:
+  = @system_info_view.ap_server_info
+
+= link_to 'Edit', edit_system_info_view_path(@system_info_view)
+'|
+= link_to 'Back', system_info_views_path

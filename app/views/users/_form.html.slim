@@ -15,6 +15,12 @@
 
   .form-group
     .col-xs-4.text-right.control-label
+      = f.label :name, "氏名"
+    .col-xs-6
+      = f.text_field :name, :class => "form-control"
+
+  .form-group
+    .col-xs-4.text-right.control-label
       = f.label :password, "パスワード"
     .col-xs-6
       = f.password_field :password, :class => "form-control"

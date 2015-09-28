@@ -1,0 +1,27 @@
+= form_for @system_info_view do |f|
+  - if @system_info_view.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@system_info_view.errors.count, "error")} prohibited this system_info_view from being saved:"
+      ul
+        - @system_info_view.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :number
+    = f.text_field :number
+  .field
+    = f.label :os_info
+    = f.collection_select :os_info_id, OsInfo.all, :id, :name
+    / = f.text_field :os_info
+  .field
+    = f.label :java_info
+    = f.collection_select :java_info_id, JavaInfo.all, :id, :name
+    / = f.text_field :java_info
+  .field
+    = f.label :ap_server_info
+    = f.collection_select :ap_server_info_id, ApServerInfo.all, :id, :name
+    / = f.text_field :ap_server_info
+  .actions = f.submit

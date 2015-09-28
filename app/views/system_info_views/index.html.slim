@@ -1,0 +1,29 @@
+h1 Listing system_info_views
+
+table
+  thead
+    tr
+      th Name
+      th Number
+      th Os info
+      th Java info
+      th Ap server info
+      th
+      th
+      th
+
+  tbody
+    - @system_info_views.each do |system_info_view|
+      tr
+        td = system_info_view.name
+        td = system_info_view.number
+        td = system_info_view.os_info
+        td = system_info_view.java_info
+        td = system_info_view.ap_server_info
+        td = link_to 'Show', system_info_view
+        td = link_to 'Edit', edit_system_info_view_path(system_info_view)
+        td = link_to 'Destroy', system_info_view, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New System info view', new_system_info_view_path
