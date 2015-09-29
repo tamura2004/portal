@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :os_info do
-    name_master nil
-arch_master nil
-version_master nil
-edition_master "MyString"
+    os_name_master_id 0
+    os_arch_master_id 0
+    os_version_master_id 0
   end
 
 end

@@ -8,13 +8,13 @@ p
   = @system_info_view.number
 p
   strong Os info:
-  = @system_info_view.os_info
+  = @system_info_view.os_info.name
 p
   strong Java info:
-  = @system_info_view.java_info
+  = @system_info_view.java_info.name
 p
   strong Ap server info:
-  = @system_info_view.ap_server_info
+  = @system_info_view.ap_server_info.name
 
 = link_to 'Edit', edit_system_info_view_path(@system_info_view)
 '|

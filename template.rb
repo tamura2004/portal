@@ -22,3 +22,5 @@ generate :model, "ApServerVersionMaster", "name:string"
 
 generate :model, "GroupMaster", "name:string", "department_master:references"
 generate :model, "DepartmentMaster", "name:string"
+
+# rails g scaffold SystemInfoView name:string number:string os_info:references java_info:references ap_server_info:references

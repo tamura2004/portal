@@ -69,11 +69,25 @@ JavaInfo.seed do |s|
   s.java_version_master_id = 0
 end
 
+JavaInfo.seed do |s|
+  s.id = 1
+  s.java_arch_master_id = 1
+  s.java_name_master_id = 1
+  s.java_version_master_id = 1
+end
+
 OsInfo.seed do |s|
   s.id = 0
   s.os_arch_master_id = 0
   s.os_name_master_id = 0
   s.os_version_master_id = 0
+end
+
+OsInfo.seed do |s|
+  s.id = 1
+  s.os_arch_master_id = 1
+  s.os_name_master_id = 1
+  s.os_version_master_id = 1
 end
 
 SystemRequirementInfo.seed do |s|
@@ -86,6 +100,12 @@ ApServerInfo.seed do |s|
   s.id = 0
   s.ap_server_name_master_id = 0
   s.ap_server_version_master_id = 0
+end
+
+ApServerInfo.seed do |s|
+  s.id = 1
+  s.ap_server_name_master_id = 1
+  s.ap_server_version_master_id = 1
 end
 
 7.times do |n|
@@ -101,6 +121,14 @@ end
     s.name = "第#{n}グループ"
     s.department_master_id = 0
   end
+end
+
+ProjectInfo.seed do |s|
+  s.id = 0
+  s.name = "MyString"
+  s.number = "MyString"
+  s.group_master_id = 0
+  s.system_info_id = 0
 end
 
 

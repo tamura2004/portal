@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :reservation do
-    projectName "MyProject"
+    project_info_id 0
 
     factory :from0801 do
       start_date "2015-08-01"
