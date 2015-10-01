@@ -12,9 +12,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # view関連
 gem 'slim-rails'
-gem "bootstrap-sass"
-gem 'redcarpet'
+gem 'redcarpet' # markdown
 gem 'rails-i18n'
+gem "foundation-rails"
+gem "foundation-icons-sass-rails"
+gem "simple_form"
 
 # 認証
 gem "sorcery"
