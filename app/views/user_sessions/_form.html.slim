@@ -1,4 +1,5 @@
-= simple_form_for(@user_session) do |f|
+  
+= simple_form_for :user_session, {url: "/user_sessions"} do |f|
   = f.error_notification
 
   .form-inputs
@@ -6,4 +7,6 @@
     = f.input :password
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, "ログイン"
+
+= button_to new_user_path

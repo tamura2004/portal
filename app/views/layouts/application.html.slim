@@ -13,7 +13,11 @@ html
   body
     == render "header"
     .row
-      .large-1.columns
+      .large-2.columns
+        ul.side-nav
+          li
+            = link_to "ログイン"
+          li
+            = link_to "予約一覧", reservations_path
       .large-10.columns
         = yield
-      .large-1.columns

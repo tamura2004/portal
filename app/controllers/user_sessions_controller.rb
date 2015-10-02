@@ -2,20 +2,20 @@ class UserSessionsController < ApplicationController
   skip_before_filter :require_login, except: [:destroy]
 
   def new
-    @user_session = UserSession.new
+    @user = User.new
   end
 
   def create
-    if login(params[:email],params[:password])
-      redirect_back_or_to(root_path, notice: "ログインしました")
+    if @user = login(params[:user_session][:email],params[:user_session][:password])
+      redirect_back_or_to(:users, notice: "ログインしました")
     else
-      flash[:alert] = "メールアドレスまたはパスワードが違います"
-      redirect_to root_path
+      flash.now[:alert] = "メールアドレスまたはパスワードが違います"
+      render action: "new"
     end
   end
 
   def destroy
     logout
-    redirect_to(login_path, notice: "ログアウトしました")
+    redirect_to(:users, notice: "ログアウトしました")
   end
 end

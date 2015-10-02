@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001135859) do
+ActiveRecord::Schema.define(version: 20150928080728) do
 
   create_table "ap_server_infos", force: :cascade do |t|
     t.integer  "ap_server_name_master_id"
@@ -169,13 +169,6 @@ ActiveRecord::Schema.define(version: 20151001135859) do
 
   add_index "system_requirement_infos", ["java_info_id"], name: "index_system_requirement_infos_on_java_info_id"
   add_index "system_requirement_infos", ["os_info_id"], name: "index_system_requirement_infos_on_os_info_id"
-
-  create_table "user_sessions", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",             null: false
