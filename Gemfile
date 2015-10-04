@@ -19,8 +19,11 @@ gem "refills"
 # view
 gem "slim-rails"
 gem "redcarpet"
-gem "rails-i18n"
 gem "simple_form"
+
+# 日本語化
+gem "rails-i18n"
+gem "devise-i18n"
 
 # 認証
 # gem "sorcery"

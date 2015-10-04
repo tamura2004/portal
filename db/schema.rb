@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928080728) do
+ActiveRecord::Schema.define(version: 20151004124259) do
 
   create_table "ap_server_infos", force: :cascade do |t|
     t.integer  "ap_server_name_master_id"
@@ -171,16 +171,21 @@ ActiveRecord::Schema.define(version: 20150928080728) do
   add_index "system_requirement_infos", ["os_info_id"], name: "index_system_requirement_infos_on_os_info_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",             null: false
-    t.integer  "group_master_id"
-    t.string   "email",            null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["group_master_id"], name: "index_users_on_group_master_id"
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

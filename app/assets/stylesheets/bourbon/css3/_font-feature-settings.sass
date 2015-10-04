@@ -1,0 +1,5 @@
+=font-feature-settings($settings...)
+  @if length($settings) == 0
+    $settings: none
+
+  +prefixer(font-feature-settings, $settings, webkit moz ms spec)

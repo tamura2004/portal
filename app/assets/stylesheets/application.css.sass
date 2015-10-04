@@ -1,0 +1,43 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bourbon"
+@import "base/base"
+@import "neat"
+@import "refills/navigation"
+@import "refills/breadcrumbs"
+
+h2
+  font-size: 12px
+  // background-color: lighten($blue,20%)
+  // color: white
+  // margin-top: 4px
+  margin: 8px
+  padding: 12px
+  border-bottom: solid 1px $dark-blue
+  border-left: solid 0.5em $dark-blue
+
+
+body
+  margin: 0px
+
+  section
+    margin-top: 8px
+    +outer-container
+    aside
+      +span-columns(2)
+    article
+      +span-columns(9)
+      form
+        +span-columns(4 of 9)

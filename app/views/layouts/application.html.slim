@@ -5,15 +5,12 @@ html
     = render "assets"
 
   body
-    = render "navbar"
-    = render "notice"
-    = render "alert"
-
-    .container-fluid
-      = yield
-
-css:
-  body { padding-top: 60px }
+    = render "refills/navigation"
+    section
+      aside
+        p menu
+      article
+        = yield
 
 
 
