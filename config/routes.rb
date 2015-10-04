@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :system_info_views
   get 'user_sessions/new'
   get 'user_sessions/create'
