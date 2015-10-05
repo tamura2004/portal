@@ -1,4 +1,4 @@
-h3 サーバライセンス予約状況
+h3 利用予約状況
 
 .btn-group.btn-group-xs[role="group"]
   a.btn.btn-default[href="/reservations/index/#{@baseDate.prev_week}"]
@@ -24,9 +24,9 @@ hr
         tr
           - @dates.each do |date|
             td[data-date="#{date}"]
-            
+
   - @reservations.each do |res|
-    .bar[style="top:#{res.top*50+35}px;left:#{res.left*80+5}px;width:#{res.width*80-10}px" data-id="#{res.id}"]
+    .bar[style="top:#{res.top*50+42}px;left:#{res.left*(100/7)+2}%;width:#{res.width*(100/7)-4}%" data-id="#{res.id}"]
     // = res.projectName
 
 coffee:
@@ -38,49 +38,3 @@ coffee:
       url = "/reservations/new/" + $(this).attr("data-date")
       window.location.href = url
 
-scss:
-  $base: #abd;
-
-  .btn {
-    border: solid 1px darken($base,10%);
-    background-color: lighten($base,12%);
-    color: darken($base,30%);
-  }
-
-  .mybox {
-    margin-top: 8px;
-    position: relative;
-
-    table {
-      width: 560px;
-    }
-
-    th {
-      background-color: lighten($base,5%);
-      border: solid 1px darken($base,5%);
-      width: 80px;
-      height: 30px;
-      text-align: center;
-    }
-
-    td {
-      border: solid 1px darken($base,5%);
-      width: 80px;
-      height: 50px;
-    }
-
-    td:hover{
-      background-color: orange;
-    }
-
-    .bar {
-      border: solid 1px darken($base,20%);
-      position: absolute;
-      height: 40px;
-      background-color: lighten($base,10%);
-
-    }
-    .bar:hover{
-      background-color: orange;
-    }
-  }

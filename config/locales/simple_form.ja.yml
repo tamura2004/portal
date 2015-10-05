@@ -15,6 +15,8 @@ ja:
       defaults:
         email: "メールアドレス"
         password: 'パスワード'
+        start_date: "開始日"
+        end_date: "終了日"
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'
