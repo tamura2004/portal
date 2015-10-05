@@ -12,6 +12,8 @@ h3 サーバライセンス予約状況
   a.btn.btn-default[href="/reservations/index/#{@baseDate.next_week}"]
     span.glyphicon.glyphicon-forward 翌週
 
+hr
+
 .mybox
   table
     thead
@@ -24,7 +26,8 @@ h3 サーバライセンス予約状況
             td[data-date="#{date}"]
             
   - @reservations.each do |res|
-    .bar[style="top:#{res.top*50+35}px;left:#{res.left*80+5}px;width:#{res.width*80-10}px" data-id="#{res.id}"] = res.projectName
+    .bar[style="top:#{res.top*50+35}px;left:#{res.left*80+5}px;width:#{res.width*80-10}px" data-id="#{res.id}"]
+    // = res.projectName
 
 coffee:
   $ ->

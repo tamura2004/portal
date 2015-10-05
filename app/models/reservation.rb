@@ -5,7 +5,7 @@ class Reservation < ActiveRecord::Base
 	attr_accessor :top,:left,:width
 
 	validate :multiplex_be_under_license_number
-	validates :projectName, presence: true
+	# validates :projectName, presence: true
 
 	def multiplex_be_under_license_number
 
