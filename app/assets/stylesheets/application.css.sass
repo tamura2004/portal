@@ -16,12 +16,21 @@
 @import jquery.ui.theme
 @import jquery.ui.datepicker
 
+@import "font-awesome-sprockets"
+@import "font-awesome"
+
+.#{$fa-css-prefix}-fw
+  width: (18em / 14)
+  text-align: center
 
 @import "bourbon"
 @import "base/base"
 @import "neat"
 @import "refills/navigation"
 @import "refills/breadcrumbs"
+
+@import "bootstrap/bootstrap"
+@import "bootstrap/bootstrap-theme"
 
 $pale-blue: lighten($light-blue, 20%)
 
@@ -38,7 +47,7 @@ $base: #abd
 
   table
     th,td
-      border: solid 1px $pale-blue
+      border: solid 1px $light-blue
     th
       background-color: $pale-blue
       text-align: center
@@ -48,7 +57,7 @@ $base: #abd
         background-color: $blue
 
   .bar
-    border: solid 1px $light-blue
+    border: solid 1px lightgray
     position: absolute
     height: 40px
     background-color: $pale-blue
@@ -105,9 +114,9 @@ body
     +outer-container
 
     aside
-      +span-columns(2)
+      +span-columns(3)
 
     article
-      +span-columns(10)
+      +span-columns(9)
       form
-        +span-columns(4 of 10)
+        +span-columns(4 of 9)

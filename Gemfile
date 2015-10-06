@@ -16,6 +16,7 @@ gem "bourbon"
 gem "neat"
 gem "bitters"
 gem "refills"
+gem "font-awesome-sass"
 
 # view
 gem "slim-rails"

@@ -5,10 +5,25 @@ html
     = render "assets"
 
   body
-    / = render "refills/navigation"
+    = render "refills/navigation"
     section
       aside
-        p menu
+        .list-group
+          a.list-group-item href="#"
+            i.fa.fa-calendar.fa-fw
+            | &nbsp; 利用予約
+          a.list-group-item href="#"
+            i.fa.fa-cube.fa-fw
+            | &nbsp; システム登録
+          a.list-group-item href="#"
+            i.fa.fa-bomb.fa-fw
+            | &nbsp; 案件登録
+          a.list-group-item href="#"
+            i.fa.fa-child.fa-fw
+            | &nbsp; ログイン
+          a.list-group-item href="#"
+            i.fa.fa-cog.fa-fw
+            | &nbsp; 新規ユーザー登録
       article
         = yield
 
