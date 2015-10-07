@@ -34,6 +34,9 @@ gem "devise"
 # model関連
 gem "seed-fu"
 
+# javascript連携
+gem "gon"
+
 group :development do
   gem "guard-livereload"
   # gem "guard-minitest"

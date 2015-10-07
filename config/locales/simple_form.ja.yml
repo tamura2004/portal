@@ -17,6 +17,12 @@ ja:
         password: 'パスワード'
         start_date: "開始日"
         end_date: "終了日"
+      system_info_view:
+        number: "システム番号"
+        name: "システム名"
+        os_info: "OS種類"
+        java_info: "Java種類"
+        ap_server_info: "APサーバ種類"
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'

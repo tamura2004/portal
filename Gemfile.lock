@@ -86,6 +86,11 @@ GEM
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gon (6.0.1)
+      actionpack (>= 3.0)
+      json
+      multi_json
+      request_store (>= 1.0)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -138,11 +143,11 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    pry (0.10.1)
+    pry (0.10.2)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry (0.10.1-x64-mingw32)
+    pry (0.10.2-x64-mingw32)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -188,8 +193,9 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.3.2)
+    redcarpet (3.3.3)
     refills (0.1.0)
+    request_store (1.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby-graphviz (1.2.2)
@@ -224,8 +230,8 @@ GEM
       slim (~> 3.0)
     slop (3.6.0)
     spring (1.4.0)
-    sprockets (3.3.4)
-      rack (~> 1.0)
+    sprockets (3.4.0)
+      rack (> 1, < 3)
     sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -239,7 +245,7 @@ GEM
     tilt (2.0.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2015.6)
+    tzinfo-data (1.2015.7)
       tzinfo (>= 1.0.0)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
@@ -266,6 +272,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl_rails
   font-awesome-sass
+  gon
   guard-livereload
   jquery-rails
   jquery-ui-sass-rails

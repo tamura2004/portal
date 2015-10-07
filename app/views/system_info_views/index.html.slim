@@ -1,28 +1,22 @@
-h1 Listing system_info_views
+h3: i.fa.fa-server &nbsp; 登録システム一覧
 
 table
   thead
     tr
-      th Name
-      th Number
-      th Os info
-      th Java info
-      th Ap server info
-      th
-      th
-      th
+      th システム番号
+      th システム名
+      th OS種別
+      th Java種別
+      th APサーバ種別
 
   tbody
     - @system_info_views.each do |system_info_view|
       tr
-        td = system_info_view.name
         td = system_info_view.number
+        td = system_info_view.name
         td = system_info_view.os_info.name
         td = system_info_view.java_info.name
         td = system_info_view.ap_server_info.name
-        td = link_to 'Show', system_info_view
-        td = link_to 'Edit', edit_system_info_view_path(system_info_view)
-        td = link_to 'Destroy', system_info_view, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

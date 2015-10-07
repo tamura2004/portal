@@ -1,6 +1,10 @@
 ja:
   activerecord:
     attributes:
+      sysytem_info_view:
+        number: システム番号
+        name: システム名
+        os_info: OS種類
       email: "メールアドレス"
   date:
     formats:

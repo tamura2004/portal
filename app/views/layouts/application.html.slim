@@ -1,3 +1,5 @@
+- options = {:class => "list-group-item"}
+
 doctype html
 html
   head
@@ -9,21 +11,30 @@ html
     section
       aside
         .list-group
-          a.list-group-item href="#"
+          = link_to reservations_path, options
             i.fa.fa-calendar.fa-fw
-            | &nbsp; 利用予約
-          a.list-group-item href="#"
-            i.fa.fa-cube.fa-fw
-            | &nbsp; システム登録
-          a.list-group-item href="#"
-            i.fa.fa-bomb.fa-fw
-            | &nbsp; 案件登録
-          a.list-group-item href="#"
-            i.fa.fa-child.fa-fw
+            span &nbsp; 利用予約
+
+          = link_to system_info_views_path, options
+            i.fa.fa-server.fa-fw
+            | &nbsp; システム一覧
+
+          = link_to new_user_session_path, options
+            i.fa.fa-sign-in.fa-fw
             | &nbsp; ログイン
-          a.list-group-item href="#"
+            
+          = link_to new_user_registration_path, options
+            i.fa.fa-user-plus.fa-fw
+            | &nbsp; ユーザー登録
+
+          = link_to destroy_user_session_path, options, methods: :delete
+            i.fa.fa-sign-out.fa-fw
+            | &nbsp; ログオフ
+
+          = link_to edit_user_registration_path, options
             i.fa.fa-cog.fa-fw
-            | &nbsp; 新規ユーザー登録
+            | &nbsp; パスワード変更
+
       article
         = yield
 

@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(version: 20151004124259) do
   add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "system_info_views", force: :cascade do |t|
-    t.string   "name"
     t.string   "number"
+    t.string   "name"
     t.integer  "os_info_id"
     t.integer  "java_info_id"
     t.integer  "ap_server_info_id"
