@@ -11,7 +11,6 @@ gem 'bcrypt'
 # css
 gem "sass-rails"
 gem "bootstrap-sass"
-gem "font-awesome-sass"
 
 # javascript
 gem "coffee-rails"
@@ -36,6 +35,9 @@ gem "quiet_assets"
 # バリデータ
 gem "date_validator"
 gem "email_validator"
+
+gem "activeadmin", github: "gregbell/active_admin"
+gem "devise"
 
 group :development, :test do
   gem "byebug"
