@@ -11,115 +11,95 @@
  * file per style scope.
  *
  */
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "font-awesome-sprocket"
+@import "font-awesome"
+
 @import themes/jquery.ui.smoothness
 @import jquery.ui.core
 @import jquery.ui.theme
 @import jquery.ui.datepicker
 
-@import "font-awesome-sprockets"
-@import "font-awesome"
+// .mybox
+//   margin-top: 8px
+//   position: relative
 
-.#{$fa-css-prefix}-fw
-  width: (18em / 14)
-  text-align: center
+//   table
+//     th,td
+//       border: solid 1px $light-blue
+//     th
+//       background-color: $pale-blue
+//       text-align: center
+//     td
+//       height: 50px
+//       &:hover
+//         background-color: $blue
 
-@import "bourbon"
-@import "base/base"
-@import "neat"
-@import "refills/navigation"
-@import "refills/breadcrumbs"
+//   .bar
+//     border: solid 1px lightgray
+//     position: absolute
+//     height: 40px
+//     background-color: $pale-blue
 
-@import "bootstrap/bootstrap"
-@import "bootstrap/bootstrap-theme"
+//     &:hover
+//       background-color: $blue
 
-$pale-blue: lighten($light-blue, 20%)
+// h2
+//   font-size: 12px
+//   // background-color: lighten($blue,20%)
+//   // color: white
+//   // margin-top: 4px
+//   margin: 8px 0px
+//   padding: 12px
+//   border-bottom: solid 1px $dark-blue
+//   border-left: solid 0.5em $dark-blue
 
-$base: #abd
+// h3
+//   position: relative
+//   color: $base-font-color
+//   background: $pale-blue
+//   font-size: 14pt
+//   line-height: 1
+//   margin: 10px -10px 20px -10px
+//   padding: 10px 5px 10px 20px
+//   box-shadow: 1px 3px 7px 0px  #666666
+//   border-top: 3px solid $light-blue
 
-// .btn
-//   border: solid 1px darken($base,10%)
-//   background-color: lighten($base,12%)
-//   color: darken($base,30%)
+//   &:after, &:before
+//     content: ""
+//     position: absolute
+//     top: 100%
+//     height: 0
+//     width: 0
+//     border: 5px solid transparent
+//     border-top: 5px solid #333
 
-.mybox
-  margin-top: 8px
-  position: relative
+//   &:after
+//     left: 0
+//     border-right: 5px solid #333
 
-  table
-    th,td
-      border: solid 1px $light-blue
-    th
-      background-color: $pale-blue
-      text-align: center
-    td
-      height: 50px
-      &:hover
-        background-color: $blue
+//   &:before
+//     right: 0
+//     border-left: 5px solid #333
 
-  .bar
-    border: solid 1px lightgray
-    position: absolute
-    height: 40px
-    background-color: $pale-blue
+// hr
+//   border-bottom: solid 1px $light-blue
 
-    &:hover
-      background-color: $blue
+// body
+//   margin: 0px
+//   background-color: #ffffff
 
-h2
-  font-size: 12px
-  // background-color: lighten($blue,20%)
-  // color: white
-  // margin-top: 4px
-  margin: 8px 0px
-  padding: 12px
-  border-bottom: solid 1px $dark-blue
-  border-left: solid 0.5em $dark-blue
+//   section
+//     margin-top: 8px
+//     +outer-container
 
-h3
-  position: relative
-  color: $base-font-color
-  background: $pale-blue
-  font-size: 14pt
-  line-height: 1
-  margin: 10px -10px 20px -10px
-  padding: 10px 5px 10px 20px
-  box-shadow: 1px 3px 7px 0px  #666666
-  border-top: 3px solid $light-blue
+//     aside
+//       +span-columns(3)
 
-  &:after, &:before
-    content: ""
-    position: absolute
-    top: 100%
-    height: 0
-    width: 0
-    border: 5px solid transparent
-    border-top: 5px solid #333
-
-  &:after
-    left: 0
-    border-right: 5px solid #333
-
-  &:before
-    right: 0
-    border-left: 5px solid #333
-
-hr
-  border-bottom: solid 1px $light-blue
-
-body
-  margin: 0px
-  background-color: #ffffff
-
-  section
-    margin-top: 8px
-    +outer-container
-
-    aside
-      +span-columns(3)
-
-    article
-      a
-        +button
-      +span-columns(9)
-      form
-        +span-columns(4 of 9)
+//     article
+//       a
+//         +button
+//       +span-columns(9)
+//       form
+//         +span-columns(4 of 9)

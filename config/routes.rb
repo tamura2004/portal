@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-
   resources :system_info_views
   resources :reservations
   resources :java_infos
