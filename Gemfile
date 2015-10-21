@@ -20,7 +20,7 @@ gem "font-awesome-sass"
 
 # view
 gem "slim-rails"
-#gem "simple_form"
+gem "simple_form"
 
 # 日本語化
 gem "rails-i18n"

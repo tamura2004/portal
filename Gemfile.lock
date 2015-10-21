@@ -193,7 +193,6 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.3.3)
     refills (0.1.0)
     request_store (1.2.0)
     responders (2.1.0)
@@ -281,7 +280,6 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-erd
   rails-i18n
-  redcarpet
   refills
   sass-rails (~> 5.0)
   seed-fu
