@@ -1,24 +1,10 @@
-rails g model ProjectInfo name:string number:string group_master:references system_info:references
-rails d model ProjectInfo
-rails g model SystemInfo name:string number:string system_requirement_info:references
-rails d model SystemInfo
-rails g model SystemRequirementInfo os_info:references java_info:references ap_server_info:references
-rails d model SystemRequirementInfo
-rails g model OsInfo name_master:references arch_master:references version_master:references edition_master
-rails d model OsInfo
-rails g model JavaInfo name_master:references arch_master:references os_info:references
-rails d model JavaInfo
-rails g model NameMaster name:string
-rails d model NameMaster
-rails g model ArchMaster name:string
-rails d model ArchMaster
-rails g model VersionMaster name:string
-rails d model VersionMaster
-rails g model EditionMaster name:string
-rails d model EditionMaster
-rails g model ApServerInfo name_master:references arch_master:references version_master:references
-rails d model ApServerInfo
-rails g model GroupMaster name:string department_master:references
-rails d model GroupMaster
-rails g model DepartmentMaster name:string
-rails d model DepartmentMaster
+rails g model System name:string number:string os:references java:references ap:references
+rails g model Dyna os:references java:references
+rails g model Group name:string dept:references
+rails g model Dept name:string
+rails g model User name:string email:string group:references hashed_password:string
+rails g model Reserve date:date system:references
+rails g model Os name:string version:integer edition:integer cpu:integer
+rails g model Java name:string version:integer bit:integer
+
+# admin, staff

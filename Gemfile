@@ -1,65 +1,44 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
+ruby  '2.2.3'
 
-gem "rails", "4.2.1"
-gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
-gem "coffee-rails", "~> 4.1.0"
+gem 'rails'
+gem 'sqlite3'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 
-gem "jquery-rails"
-gem "jquery-ui-sass-rails"
-# gem "turbolinks"
-# gem "jbuilder", "~> 2.0"
-# gem "sdoc", "~> 0.4.0", group: :doc
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
 
-# CSS
-gem "bourbon"
-gem "neat"
-gem "bitters"
-gem "refills"
-gem "font-awesome-sass"
-
-# view
-gem "slim-rails"
-#gem "simple_form"
-
-# 日本語化
+gem 'therubyracer', platforms: :ruby
+gem 'bcrypt'
+gem "nokogiri"
 gem "rails-i18n"
-gem "devise-i18n"
 
-# 認証
-# gem "sorcery"
-gem "devise"
-
-# model関連
-gem "seed-fu"
-
-# javascript連携
-gem "gon"
-
-group :development do
-  gem "guard-livereload"
-  # gem "guard-minitest"
-  gem "spring"
-  gem "rails-erd"
-end
+gem "slim-rails"
+gem "kaminari"
+gem "quiet_assets"
+gem "date_validator"
+gem "email_validator"
+gem "jquery-ui-rails"
 
 group :development, :test do
-  gem "sqlite3"
-  gem "byebug"
-  gem "web-console", "~> 2.0"
   gem "pry-rails"
+  gem 'spring'
+  gem "rspec-rails"
+  gem "guard-rspec"
+  gem "spring-commands-rspec"
+  gem "capybara"
   gem "factory_girl_rails"
+  gem "database_cleaner"
+  gem "byebug"
 end
 
-group :test do
-  gem "shoulda"
-  gem "terminal-notifier-guard"
+group :doc do
+ gem 'sdoc'
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-    # generate "devise:install"
-    # generate "devise:views"
-    # generate "devise","User"
-    # generate "devise:controllers","users"
-    # generate "simple_form:install"
+
+
