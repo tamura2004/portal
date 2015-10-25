@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title = document_title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    nav.navbar
+      .navbar-header
+        = link_to "オープン系基盤", :root
+
+    section
+      ul.breadcrumb
+        li = link_to "トップ"
+        li = link_to "システム"
+        li = link_to "一覧"
+
+      = yield

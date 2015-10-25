@@ -1,0 +1,12 @@
+- @title = "ログイン"
+- p = BootstrapPresenter.new(self)
+= p.panel @title
+
+  = form_for @form, url: :user_session do |f|
+    - p = BootstrapFormPresenter.new(f,self)
+
+    = p.text_field(:email)
+    = p.password_field(:password)
+    = p.submit
+
+

@@ -40,24 +40,24 @@ ActiveRecord::Schema.define(version: 20151023073607) do
 
   create_table "javas", force: :cascade do |t|
     t.string   "name",       null: false
-    t.string   "version",    null: false
-    t.string   "bit",        null: false
+    t.string   "version"
+    t.string   "bit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "os", force: :cascade do |t|
     t.string   "name",       null: false
-    t.string   "version",    null: false
+    t.string   "version"
     t.string   "edition"
-    t.string   "cpu",        null: false
+    t.string   "cpu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reserves", force: :cascade do |t|
     t.integer  "system_id"
-    t.date     "date",       null: false
+    t.date     "year_month", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151023073607) do
   create_table "systems", force: :cascade do |t|
     t.string   "name",       null: false
     t.string   "number"
+    t.integer  "group_id"
     t.integer  "os_id"
     t.integer  "java_id"
     t.integer  "ap_id"
@@ -75,18 +76,26 @@ ActiveRecord::Schema.define(version: 20151023073607) do
   end
 
   add_index "systems", ["ap_id"], name: "index_systems_on_ap_id"
+  add_index "systems", ["group_id"], name: "index_systems_on_group_id"
   add_index "systems", ["java_id"], name: "index_systems_on_java_id"
   add_index "systems", ["os_id"], name: "index_systems_on_os_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",            null: false
-    t.string   "email",           null: false
     t.integer  "group_id"
+    t.string   "email",                            null: false
+    t.string   "email_for_index",                  null: false
+    t.string   "family_name",                      null: false
+    t.string   "given_name",                       null: false
+    t.string   "family_name_kana",                 null: false
+    t.string   "given_name_kana",                  null: false
     t.string   "hashed_password"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "suspended",        default: false, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
+  add_index "users", ["email_for_index"], name: "index_users_on_email_for_index", unique: true
+  add_index "users", ["family_name_kana", "given_name_kana"], name: "index_users_on_family_name_kana_and_given_name_kana"
   add_index "users", ["group_id"], name: "index_users_on_group_id"
 
 end

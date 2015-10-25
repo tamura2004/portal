@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title = document_title
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    -flash.each do |type,msg|
+      div[class="alert alert-#{type} alert-dismissable" role="alert"]
+        = msg
+        button.close type="button" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true" &times;
+
+    nav.navbar
+      .navbar-header
+        = link_to "オープン系基盤", :root
+      .collapse.navbar-collapse
+        .ul.nav.navbar-nav.navbar-right
+          - if current_user
+            li = link_to "ログアウト", :user_session, method: :delete
+          - else
+            li = link_to "ログイン", :user_login
+
+
+    section
+      ul.breadcrumb
+        li = link_to "トップ"
+        li = link_to "システム"
+        li = link_to "一覧"
+
+      = yield

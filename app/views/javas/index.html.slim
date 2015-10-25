@@ -1,0 +1,23 @@
+h4 Java一覧
+
+table
+  thead
+    tr
+      th 名前
+      th
+      th
+      th
+
+  tbody
+    - @javas.each do |java|
+      tr
+        td = java.full_name
+        td = link_to 'Show', java
+        td = link_to 'Edit', edit_java_path(java)
+        td = link_to 'Destroy', java, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+= paginate @javas
+
+br
+
+= link_to 'New Java', new_java_path

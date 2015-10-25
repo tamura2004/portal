@@ -34,6 +34,8 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "database_cleaner"
   gem "byebug"
+  gem "seed-fu"
+  gem "hirb"
 end
 
 group :doc do

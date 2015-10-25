@@ -24,14 +24,14 @@ $very_wide: 20px
 
 body
 
-  nav
-    @extend .navbar
+  nav.navbar
     @extend .navbar-default
     @extend .container-fluid
 
     .navbar-header
       a
         @extend .navbar-brand
+        font-weight: 900
 
   section
     @extend .container-fluid
@@ -52,6 +52,7 @@ body
         // text-align: right
 
       input[type="text"],
+      input[type="password"],
       textarea,
       select
         @extend .form-control

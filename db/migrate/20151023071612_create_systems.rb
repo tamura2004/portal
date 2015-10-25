@@ -6,7 +6,6 @@ class CreateSystems < ActiveRecord::Migration
       t.references :group, index: true, foreign_key: true
       t.references :os, index: true, foreign_key: true
       t.references :java, index: true, foreign_key: true
-      t.references :ap, index: true, foreign_key: true
 
       t.timestamps null: false
     end
