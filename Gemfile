@@ -16,6 +16,7 @@ gem 'bcrypt'
 gem "nokogiri"
 gem "rails-i18n"
 
+gem "bootstrap-sass"
 gem "slim-rails"
 gem "kaminari"
 gem "quiet_assets"
