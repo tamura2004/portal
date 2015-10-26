@@ -10,12 +10,13 @@ Group.seed do |s|
 end
 
 User.seed do |s|
-  s.id = 1
+  s.id = 2
   s.group_id = 3
-  s.email = "tamura2004@gmail.com"
-  s.email_for_index = "tamura2004@gmail.com"
-  s.family_name = "田村"
-  s.given_name = "光浩"
-  s.family_name_kana = "タムラ"
-  s.given_name_kana = "ミツヒロ"
+  s.email = "taro@example.com"
+  s.email_for_index = "taro@example.com"
+  s.family_name = "田中"
+  s.given_name = "太郎"
+  s.family_name_kana = "タナカ"
+  s.given_name_kana = "タロウ"
+  s.password = "pw"
 end

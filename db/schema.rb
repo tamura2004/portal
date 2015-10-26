@@ -70,12 +70,10 @@ ActiveRecord::Schema.define(version: 20151023073607) do
     t.integer  "group_id"
     t.integer  "os_id"
     t.integer  "java_id"
-    t.integer  "ap_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "systems", ["ap_id"], name: "index_systems_on_ap_id"
   add_index "systems", ["group_id"], name: "index_systems_on_group_id"
   add_index "systems", ["java_id"], name: "index_systems_on_java_id"
   add_index "systems", ["os_id"], name: "index_systems_on_os_id"
