@@ -1,0 +1,40 @@
+@import "config.styl"
+
+blue_1 = lighten(blue,60%)
+blue_2 = lighten(blue,80%)
+
+line = 1px solid blue1
+
+table
+  border 1px solid bd_color
+  margin 1em
+
+  &:last-child
+    margin-bottom 0
+  
+  thead
+    background-color bg_color
+    border-bottom line
+  
+  th, td
+    padding 0.25em 0.5em
+    border-right line
+  
+  tr
+    border-bottom line
+    &:last-child
+      border-bottom 0
+      
+  &:nth-child(even)
+    background #f9f9f9
+    &:nth-child(odd)
+    background #fff
+  
+  transition all 250ms
+  &:hover
+    background lighten($light-blue, 90%)
+  
+@media screen and (min-width: 568px)
+  table
+    margin: 0.5em 0
+  

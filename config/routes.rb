@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :javas
+
   namespace :admin do
     root "top#index"
   end
@@ -13,8 +15,6 @@ Rails.application.routes.draw do
     get "login" => "sessions#new", as: :login
     post "session" => "sessions#create", as: :session
     delete "session" => "sessions#destroy"
-
-    resources :javas
   end
 
 end

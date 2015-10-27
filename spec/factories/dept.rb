@@ -3,4 +3,3 @@ FactoryGirl.define do
     name "第一開発部"
   end
 end
-

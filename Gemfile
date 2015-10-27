@@ -3,7 +3,7 @@ ruby  '2.2.3'
 
 gem 'rails'
 gem 'sqlite3'
-gem 'sass-rails'
+# gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 
@@ -16,10 +16,10 @@ gem 'bcrypt'
 gem "nokogiri"
 gem "rails-i18n"
 
-gem "bootstrap-sass"
+# gem "bootstrap-sass"
 gem "slim-rails"
 gem "kaminari"
-gem "quiet_assets"
+# gem "quiet_assets"
 gem "date_validator"
 gem "email_validator"
 gem "jquery-ui-rails"

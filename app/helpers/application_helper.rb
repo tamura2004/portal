@@ -6,4 +6,8 @@ module ApplicationHelper
       "オープン系共通基盤ポータル"
     end
   end
+
+  def current_user
+    true
+  end
 end
