@@ -1,0 +1,10 @@
+{
+  "generator-lean-mean": {
+    "appName": "learn-mean",
+    "scaffolds": [
+      "navbar"
+    ],
+    "css": "Bootstrap",
+    "fontawesome": true
+  }
+}

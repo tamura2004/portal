@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Learn-mean
+    base(href="/")
+    //---inject:bower:css---
+    link(rel='stylesheet' href='bower_components/fontawesome/css/font-awesome.css')
+    link(rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css')
+    //---inject---
+    //---inject:css---
+    link(rel='stylesheet' href='styles/main.css')
+    //---inject---
+  body(ng-app="learn-meanApp")
+    
+    div(ng-include='\'modules/navbar\'')
+    div(ng-view)
+    //---inject:lib:js---
+    //---inject---
+    //---inject:bower:js---
+    script(src='bower_components/angular/angular.js')
+    script(src='bower_components/angular-route/angular-route.js')
+    script(src='bower_components/angular-sanitize/angular-sanitize.js')
+    script(src='bower_components/angular-animate/angular-animate.js')
+    script(src='bower_components/angular-cookies/angular-cookies.js')
+    script(src='bower_components/angular-resource/angular-resource.js')
+    script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/bootstrap/dist/js/bootstrap.js')
+    //---inject---
+    //---inject:js---
+    script(src='app.js')
+    script(src='modules/main.js')
+    script(src='modules/navbar.js')
+    //---inject---
