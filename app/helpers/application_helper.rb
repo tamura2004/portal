@@ -1,13 +1,9 @@
 module ApplicationHelper
   def document_title
     if @title.present?
-      "#{@title} - オープン系共通基盤ポータル"
+      "#{@title} - SOI"
     else
-      "オープン系共通基盤ポータル"
+      "SOI"
     end
-  end
-
-  def current_user
-    true
   end
 end

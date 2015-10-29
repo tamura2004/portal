@@ -1,8 +1,0 @@
-nav.navbar.navbar-default(role="navigation" ng-controller='NavbarController as ctrl')
-  .container-fluid
-    .navbar-header
-      a.navbar-brand(href="/") Learn-mean
-    .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li(ng-repeat="module in ctrl.modules" ng-class="{active:ctrl.isActive(module.path)}")
-          a(ng-href="{{module.path}}") {{module.name}}
