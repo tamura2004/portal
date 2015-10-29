@@ -1,4 +1,5 @@
 class User::Base < ApplicationController
+  layout "user"
   private
   def current_user
     if session[:user_id]

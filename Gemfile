@@ -1,48 +1,42 @@
 source 'https://rubygems.org'
 ruby  '2.2.3'
 
-gem 'rails'
-gem 'sqlite3'
-# gem 'sass-rails'
-gem 'uglifier'
-gem 'coffee-rails'
-
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder'
-
-gem 'therubyracer', platforms: :ruby
-gem 'bcrypt'
-gem "nokogiri"
-gem "rails-i18n"
-
-# gem "bootstrap-sass"
-gem "slim-rails"
-gem "kaminari"
-# gem "quiet_assets"
+gem "bootstrap-sass"
 gem "date_validator"
 gem "email_validator"
+gem "font-awesome-sass"
 gem "jquery-ui-rails"
+gem "kaminari"
+gem "nokogiri"
+gem "quiet_assets"
+gem "rails-i18n"
+gem "slim-rails"
 gem "stylus"
+gem 'bcrypt'
+gem 'coffee-rails'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'rails'
+gem 'sass-rails'
+gem 'sqlite3'
+gem 'therubyracer', platforms: :ruby
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development, :test do
-  gem "pry-rails"
-  gem 'spring'
-  gem "rspec-rails"
-  gem "guard-rspec"
-  gem "spring-commands-rspec"
-  gem "capybara"
-  gem "factory_girl_rails"
-  gem "database_cleaner"
   gem "byebug"
-  gem "seed-fu"
+  gem "capybara"
+  gem "database_cleaner"
+  gem "factory_girl_rails"
+  gem "guard-rspec"
   gem "hirb"
+  gem "pry-rails"
+  gem "rspec-rails"
+  gem "seed-fu"
+  gem "spring-commands-rspec"
+  gem 'spring'
 end
 
 group :doc do
  gem 'sdoc'
 end
-
-
-
-

@@ -1,0 +1,20 @@
+h4 Java一覧
+
+table.table.table-bordered
+  thead
+    tr
+      th colspan=4 名前
+
+  tbody
+    - @javas.each do |java|
+      tr
+        td = java.full_name
+        td = link_to '明細', [:staff, java]
+        td = link_to '編集', [:edit, :staff, java]
+        td = link_to '削除', [:staff, java], data: {:confirm => '本当に削除しますか？'}, :method => :delete
+
+= paginate @javas
+
+br
+
+= link_to 'New Java', new_staff_java_path

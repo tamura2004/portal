@@ -1,8 +1,0 @@
-{
-  "name": "potal-jadestyl",
-  "private": true,
-  "dependencies": {
-    "jquery": "1.11.0",
-    "imgprogress": "https://github.com/cedced19/imgprogress.git"
-  }
-}

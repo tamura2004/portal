@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :javas
+
+  get "hi", controller: "hello", action: "world"
 
   namespace :admin do
     root "top#index"
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :staff do
     root "top#index"
+    resources :javas
   end
 
   namespace :user do

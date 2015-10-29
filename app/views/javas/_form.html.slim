@@ -1,9 +1,0 @@
-= form_for @java do |f|
-  - if @java.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@java.errors.count, "error")} prohibited this java from being saved:"
-      ul
-        - @java.errors.full_messages.each do |message|
-          li = message
-
-  .actions = f.submit

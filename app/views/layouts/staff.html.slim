@@ -6,14 +6,15 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    nav.navbar
-      .navbar-header
-        = link_to "オープン系基盤", :root
+    nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          = link_to "SOCI", :staff_root, class: "navbar-brand"
 
     section
       ul.breadcrumb
         li = link_to "トップ"
         li = link_to "システム"
-        li = link_to "一覧"
+        li = link_to "java一覧", :staff_javas
 
       = yield
