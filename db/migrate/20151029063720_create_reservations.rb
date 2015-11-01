@@ -3,7 +3,7 @@ class CreateReservations < ActiveRecord::Migration
     create_table :reservations do |t|
       t.references :system, index: true, foreign_key: true
       t.references :user, index: true, foreign_key: true
-      t.date :date, null: false
+      t.string :month, null: false
 
       t.timestamps null: false
     end

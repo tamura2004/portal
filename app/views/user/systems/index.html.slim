@@ -1,0 +1,19 @@
+h1 Listing user_systems
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @user_systems.each do |user_system|
+      tr
+        td = link_to 'Show', user_system
+        td = link_to 'Edit', edit_user_system_path(user_system)
+        td = link_to 'Destroy', user_system, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New System', new_user_system_path

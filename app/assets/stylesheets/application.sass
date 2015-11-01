@@ -1,39 +1,76 @@
 
-$gray-light: #aaa
-$gray-lighter: #ddd
+// $gray-light: #aaa
+// $gray-lighter: #ddd
 
-$breadcrumb-bg: $gray-lighter
-$breadcrumb-color: $gray-light
-$btn-default-border: $gray-light
-$dropdown-border: $gray-light
-$dropdown-divider-bg: $gray-light
-$dropdown-fallback-border: $gray-light
-$input-border: $gray-light
-$list-group-border: $gray-light
-$nav-tabs-active-link-hover-border-color: $gray-light
-$nav-tabs-border-color: $gray-light
-$nav-tabs-justified-link-border-color: $gray-light
-
-$navbar-height: 32px
-$navbar-inverse-bg: darken(#428bca, 20%)
-
-$padding-base-vertical: 2px
-$pagination-border: $gray-light
-$pagination-disabled-border: $gray-light
-$pagination-hover-border: $gray-light
-$panel-body-padding: $padding-base-vertical
-$panel-default-border: $gray-light
-$panel-heading-padding: $padding-base-vertical
-$panel-inner-border: $gray-light
-$table-border-color: $gray-light
-$table-cell-padding: $padding-base-vertical
-$well-bg: $gray-lighter
+// $breadcrumb-bg: $gray-lighter
+// $breadcrumb-color: $gray-light
+// $btn-default-border: $gray-light
+// $dropdown-border: $gray-light
+// $dropdown-divider-bg: $gray-light
+// $dropdown-fallback-border: $gray-light
+// $input-border: $gray-light
+// $list-group-border: $gray-light
+// $nav-tabs-active-link-hover-border-color: $gray-light
+// $nav-tabs-border-color: $gray-light
+// $nav-tabs-justified-link-border-color: $gray-light
+// $navbar-border-radius: 0px
+// $navbar-margin-bottom: 0px
+// $pagination-border: $gray-light
+// $pagination-disabled-border: $gray-light
+// $pagination-hover-border: $gray-light
+// $panel-default-border: $gray-light
+// $panel-inner-border: $gray-light
+// $table-border-color: $gray-light
+// $well-bg: $gray-lighter
+// $brand-dark: darken(#428bca, 6.5%)
+// $line-height-base: 1
+// $navbar-height: 32px
+// $navbar-inverse-bg: $brand-dark
+// $padding-base-vertical: 2px
+// $panel-body-padding: $padding-base-vertical
+// $panel-heading-padding: $padding-base-vertical
+// $table-cell-padding: $padding-base-vertical
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "font-awesome-sprockets"
 @import "font-awesome"
 
+/* Custom container */
+.container-narrow
+  margin: 0 auto
+  max-width: 700px
+
 .navbar-brand
   font-family: Meiryo
   font-weight: 900
+
+
+
+
+
+.pagination
+  margin: 4px 0
+
+
+
+body
+  font-size: 12px
+  font-family:  Meiryo, Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif
+
+
+table
+  @extend .table
+  margin-bottom: 4px
+  th
+    // background-color: $brand-dark
+    // color: white
+    border-bottom: none 0px white
+
+table#calendar
+  width: 600px
+  margin: 0 auto
+  thead
+    tr
+      th
+        width: 200px

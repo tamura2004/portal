@@ -1,4 +1,4 @@
-class User::Base < ApplicationController
+class User::BaseController < ApplicationController
   layout "user"
   private
   def current_user

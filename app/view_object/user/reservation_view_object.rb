@@ -1,6 +1,12 @@
-class User::ReservationViewObject
-  include ActiveModel::Model
-  attr_accessor :month, :first_license, :second_license
+class Calendar
+  def month
+    @month ||= Month.new(date)
+  end
 
   def self.all
-    Time.now.all_month
+    start_month = Month.new(Time.now)
+    end_month = start_month + 12
+
+
+end
+

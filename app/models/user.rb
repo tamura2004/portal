@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def name
+    [family_name,given_name].join(" ")
+  end
 end

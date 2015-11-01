@@ -1,0 +1,23 @@
+- @title = "利用予定"
+
+table.table.table-bordered#calendar
+  caption 利用予定
+  thead
+    tr
+      th 利用年月
+      th ライセンス１
+      th ライセンス２
+  tbody
+    - @calendars.each do |r|
+      tr
+        td = r.month
+
+        -if r.res1
+          td = link_to r.res1.name, user_reservation_path(r.res1)
+        -else
+          td = link_to "空き", new_user_reservation_path
+
+        -if r.res2
+          td = link_to r.res2.name
+        -else
+          td 空き

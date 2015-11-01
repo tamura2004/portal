@@ -1,0 +1,9 @@
+= form_for @user_system do |f|
+  - if @user_system.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@user_system.errors.count, "error")} prohibited this user_system from being saved:"
+      ul
+        - @user_system.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit
